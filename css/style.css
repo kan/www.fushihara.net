@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+* {
+    font-family: 'Noto Sans Japanese', serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 3px #999;
+    margin-left: 1em;
+}
+
+h1 em {
+    color: red;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px #999;
+    margin-top: 1.5em;
+}
+
+h2 i {
+    margin-right: 0.2em;
+}
+
+#contents {
+    margin-left: 3em;
+    padding-bottom: 2em;
+}
+
+#contents a {
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px dotted #666;
+    color: #333;
+}
+
+#contents li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5em;
+    border-top: 1px dashed gray;
+    text-align: right;
+}
+
+footer a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+
+footer i {
+    margin: 0 0.1em 0 0.1em;
+}
+
+footer span {
+    margin-left: 0.5em;
+}
+
+footer img {
+    vertical-align: middle;
+}
+
+.fa-pencil {
+    color: #093;
+}
+
+.fa-github {
+    color: #f06;
+}
+
+.fa-slideshare {
+    color: #36f;
+}
+
+.fa-star {
+    color: #ff9;
+}
+
+.fa-hatena:before {
+    content: "H";
+    font-family: Verdana;
+    font-weight: bold;
+}

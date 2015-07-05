@@ -2,8 +2,13 @@
   "name": "www.fushihara.net",
   "version": "1.0.0",
   "description": "web site files for fushihara.net.",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/kan/www.fushihara.net.git"
+  },
   "devDependencies": {
     "browser-sync": "^2.7.13",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.0"
   }
 }
