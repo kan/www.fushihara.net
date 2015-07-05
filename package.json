@@ -1,0 +1,9 @@
+{
+  "name": "www.fushihara.net",
+  "version": "1.0.0",
+  "description": "web site files for fushihara.net.",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0"
+  }
+}
