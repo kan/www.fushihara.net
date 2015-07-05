@@ -20,8 +20,32 @@ h2 {
     margin-top: 1.5em;
 }
 
-h2 i {
+h2:before {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    width: 1.28571429em;
+    text-align: center;
     margin-right: 0.2em;
+}
+
+h2.pencil:before {
+    color: #093;
+    content: "\f040";
+}
+
+h2.github:before {
+    color: #f06;
+    content: "\f09b";
+}
+
+h2.slideshare:before {
+    color: #36f;
+    content: "\f1e7";
+}
+
+h2.star:before {
+    color: #ff9;
+    content: "\f005";
 }
 
 #contents {
@@ -66,22 +90,6 @@ footer span {
 
 footer img {
     vertical-align: middle;
-}
-
-.fa-pencil {
-    color: #093;
-}
-
-.fa-github {
-    color: #f06;
-}
-
-.fa-slideshare {
-    color: #36f;
-}
-
-.fa-star {
-    color: #ff9;
 }
 
 .fa-hatena:before {
