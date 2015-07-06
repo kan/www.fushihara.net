@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-@import url(/css/icon-font.css);
+@import url(icon-font.css);
 
 * {
     font-family: 'Noto Sans Japanese', serif;

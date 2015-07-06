@@ -2,36 +2,34 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var minifyCss = require('gulp-minify-css');
 var shell = require('gulp-shell');
+var gzip = require('gulp-gzip');
 
 gulp.task('default', ['browser-sync']);
 
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: './',
+            baseDir: 'src/',
             index: 'index.html'
         }
     });
 
-    gulp.watch('./*.html').on('change', browserSync.reload);
-    gulp.watch('css/*.css').on('change', browserSync.reload);
+    gulp.watch('src/**/*.+(html|js|css|svg)').on('change', browserSync.reload);
 });
 
 gulp.task('minify-css', function() {
-    return gulp.src('css/*.css')
+    return gulp.src('src/**/*.css')
         .pipe(minifyCss())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist'))
+        .pipe(gzip())
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['minify-css'], function() {
-    gulp.src('*.html')
+    gulp.src('src/**/*.+(html|js|gif|png|ico|svg|eot|ttf|woff)')
+        .pipe(gulp.dest('dist'))
+        .pipe(gzip())
         .pipe(gulp.dest('dist'));
-    gulp.src('js/*.js')
-        .pipe(gulp.dest('dist/js'));
-    gulp.src('img/*.*')
-        .pipe(gulp.dest('dist/img'));
-    gulp.src('font/*.*')
-        .pipe(gulp.dest('dist/font'));
 });
 
 gulp.task('release', ['build'], shell.task([
