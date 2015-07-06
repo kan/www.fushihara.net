@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var minifyCss = require('gulp-minify-css');
+var shell = require('gulp-shell');
 
 gulp.task('default', ['browser-sync']);
 
@@ -32,3 +33,8 @@ gulp.task('build', ['minify-css'], function() {
     gulp.src('font/*.*')
         .pipe(gulp.dest('dist/font'));
 });
+
+gulp.task('release', ['build'], shell.task([
+    'ssh fushihara.net "cd /var/www; git pull"',
+    'open https://fushihara.net/'
+]));
