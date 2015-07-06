@@ -26,7 +26,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('build', ['minify-css'], function() {
-    gulp.src('src/**/*.+(html|js|gif|png|ico|svg|eot|ttf|woff)')
+    gulp.src('src/**/*.+(html|js|json|gif|png|ico|svg|eot|ttf|woff)')
         .pipe(gulp.dest('dist'))
         .pipe(gzip())
         .pipe(gulp.dest('dist'));

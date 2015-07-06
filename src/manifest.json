@@ -1,0 +1,12 @@
+{
+    "lang": "ja",
+    "name": "www.fushihar.net",
+    "short_name": "fushihara.net",
+    "icons": [{
+        "src": "/img/favicon.png",
+        "sizes": "145x145",
+        "type": "image/png"
+    }],
+    "start_url": "https://fushihara.net/",
+    "display": "browser"
+}
