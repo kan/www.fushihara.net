@@ -29,4 +29,6 @@ gulp.task('build', ['minify-css'], function() {
         .pipe(gulp.dest('dist/js'));
     gulp.src('img/*.*')
         .pipe(gulp.dest('dist/img'));
+    gulp.src('font/*.*')
+        .pipe(gulp.dest('dist/font'));
 });
