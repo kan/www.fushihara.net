@@ -67,8 +67,9 @@ gulp.task('react', function() {
 });
 
 gulp.task('build', ['uglify-js','minify-css'], function() {
-    gulp.src('src/**/*.+(html|js|json|css|gif|png|ico|svg|eot|ttf|woff)')
+    gulp.src('src/**/*.*')
         .pipe(plumber())
+        .pipe(filter(['*','!**/*.jsx']))
         .pipe(gulp.dest('dist'))
         .pipe(gzip())
         .pipe(gulp.dest('dist'));
