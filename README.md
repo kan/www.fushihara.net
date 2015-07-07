@@ -25,5 +25,5 @@ gulp
 * 一瞬白くなる問題への対応
   * あるいは Noto Font を捨てる
 * blog の記事リストを載せる
-* github と slideshare のとこをAPIからの自動取得に
+* ~~github と slideshare のとこをAPIからの自動取得に~~
 * soozy slack の invite page のデザインをもうちょっと何とかしたい

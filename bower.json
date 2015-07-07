@@ -1,0 +1,27 @@
+{
+  "name": "www.fushihara.net",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kan/www.fushihara.net",
+  "authors": [
+    "Kan Fushihara <kan.fushihara@gmail.com>"
+  ],
+  "description": "site data for www.fushihara.net",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fetch": "~0.9.0",
+    "es6-promise": "~2.2.0",
+    "underscore": "~1.8.3",
+    "react": "~0.13.3"
+  }
+}
