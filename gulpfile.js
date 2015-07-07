@@ -74,7 +74,7 @@ gulp.task('build', ['uglify-js','minify-css'], function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('release', ['build'], shell.task([
+gulp.task('release', shell.task([
     'ssh fushihara.net "cd /var/www; git pull"',
     'open https://fushihara.net/'
 ]));
