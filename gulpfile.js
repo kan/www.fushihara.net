@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var filter = require('gulp-filter');
 var sourcemaps = require('gulp-sourcemaps');
+var debug = require('gulp-debug');
 
 gulp.task('default', ['browser-sync']);
 
@@ -69,7 +70,7 @@ gulp.task('react', function() {
 gulp.task('build', ['uglify-js','minify-css'], function() {
     gulp.src('src/**/*.*')
         .pipe(plumber())
-        .pipe(filter(['*','!**/*.jsx']))
+        .pipe(filter(['**/*', '!**/*.jsx']))
         .pipe(gulp.dest('dist'))
         .pipe(gzip())
         .pipe(gulp.dest('dist'));

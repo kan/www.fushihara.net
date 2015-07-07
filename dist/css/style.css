@@ -60,6 +60,14 @@ h2.icon-star:before {
     margin-bottom: 0.5em;
 }
 
+#contents .subitem ul {
+    margin-top: 0.5em;
+}
+
+#contents .subitem li {
+    font-size: 0.8em;
+}
+
 footer {
     position: fixed;
     bottom: 0;
