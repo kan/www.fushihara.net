@@ -18,6 +18,7 @@
     "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.4.2",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "main-bower-files": "^2.8.2"
   }

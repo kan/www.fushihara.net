@@ -11,6 +11,7 @@ var notify = require('gulp-notify');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var filter = require('gulp-filter');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('default', ['browser-sync']);
 
@@ -31,8 +32,10 @@ gulp.task('minify-css', function() {
     return gulp.src('src/**/*.css')
         .pipe(plumber())
         .pipe(filter(['**/*.css', '!**/*.min.css']))
+        .pipe(sourcemaps.init())
         .pipe(minifyCss())
         .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('src'));
 });
 
@@ -40,8 +43,10 @@ gulp.task('uglify-js', ['bower', 'react'], function() {
     return gulp.src('src/**/*!(\.min).js')
         .pipe(plumber())
         .pipe(filter(['**/*.js', '!**/*.min.js']))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('src'));
 });
 
