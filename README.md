@@ -6,6 +6,7 @@ https://www.fushihara.net/ のファイルを管理している。以下自分�
 
 ```sh
 npm install
+bower install
 gulp
 ```
 
@@ -15,15 +16,10 @@ gulp
 
 ### gulp release
 
-本番サーバーでこのリポジトリを pull する。gulp build が事前に実行される。
+本番サーバーでこのリポジトリを pull する。
 
 ## TODO
 
-* css ファイルの統合
-  * 要らない気がする
-* css に sourcemap
-* 一瞬白くなる問題への対応
-  * あるいは Noto Font を捨てる
-* blog の記事リストを載せる
-* ~~github と slideshare のとこをAPIからの自動取得に~~
+* sourcemap対応したが、本当はmain.jsxへmappingしたい
+* async付けたいので、vendor.jsとmain.jsは統合するべき?
 * soozy slack の invite page のデザインをもうちょっと何とかしたい
