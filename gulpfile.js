@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var filter = require('gulp-filter');
 var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
 var debug = require('gulp-debug');
 
 gulp.task('default', ['browser-sync']);
@@ -26,7 +27,17 @@ gulp.task('browser-sync', function() {
 
     gulp.watch('src/**/*.+(html|js|css|svg)').on('change', browserSync.reload);
     gulp.watch('src/**/*.jsx', ['uglify-js']);
-    gulp.watch('src/css/style.css', ['minify-css']);
+    gulp.watch('src/**/*.scss', ['sass']);
+});
+
+gulp.task('sass', function() {
+    return gulp.src('src/**/*.scss')
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('src'));
 });
 
 gulp.task('minify-css', function() {
@@ -67,10 +78,10 @@ gulp.task('react', function() {
         .pipe(gulp.dest('src'));
 });
 
-gulp.task('build', ['uglify-js','minify-css'], function() {
+gulp.task('build', ['uglify-js','minify-css','sass'], function() {
     gulp.src('src/**/*.*')
         .pipe(plumber())
-        .pipe(filter(['**/*', '!**/*.jsx']))
+        .pipe(filter(['**/*', '!**/*.jsx', '!**/*.scss']))
         .pipe(gulp.dest('dist'))
         .pipe(gzip())
         .pipe(gulp.dest('dist'));

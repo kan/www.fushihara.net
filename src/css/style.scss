@@ -1,0 +1,90 @@
+* {
+  font-family: 'Noto Sans Japanese', serif;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 1px 1px 3px #999;
+  margin-left: 1em;
+  em {
+    color: red;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px #999;
+  margin-top: 1.5em;
+  &:before {
+    display: inline-block;
+    font-family: 'icomoon';
+    width: 1.28571429em;
+    text-align: center;
+    margin-right: 0.2em;
+  }
+  &.icon-pencil:before {
+    color: #093;
+  }
+  &.icon-github:before {
+    color: #f06;
+  }
+  &.icon-slideshare:before {
+    color: #36f;
+  }
+  &.icon-star:before {
+    color: #ff9;
+  }
+}
+
+#contents {
+  margin-left: 3em;
+  padding-bottom: 2em;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px dotted #666;
+    color: #333;
+  }
+  li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+  }
+  .subitem {
+    ul {
+      margin-top: 0.5em;
+    }
+    li {
+      font-size: 0.8em;
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5em;
+  border-top: 1px dashed gray;
+  text-align: right;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+  }
+  i {
+    margin: 0 0.1em 0 0.1em;
+  }
+  span {
+    margin-left: 0.5em;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+.fa-hatena:before {
+  content: "H";
+  font-family: Verdana;
+  font-weight: bold;
+}
