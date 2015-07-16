@@ -1,3 +1,7 @@
+var React = require('react');
+var _ = require('underscore');
+require('fetch');
+
 google.load('feeds', '1');
 
 function ready(fn) {
