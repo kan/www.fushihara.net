@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require('react');
 var _ = require('underscore');
 require('fetch');
@@ -13,26 +15,26 @@ function ready(fn) {
 }
 
 // const
-var GITHUB_API_URL = '//api.github.com/users/kan/repos?sort=updated';
-var REPOS_NUM = 5;
+const GITHUB_API_URL = '//api.github.com/users/kan/repos?sort=updated';
+const REPOS_NUM = 5;
 
-var Repos = React.createClass({
-    render: function() {
+class Repos extends React.Component {
+    render() {
         return (
             <li><a href={this.props.url}>{this.props.name}</a></li>
         );
     }
-});
+}
 
-var ReposList = React.createClass({
-    render: function() {
+class ReposList extends React.Component {
+    render() {
         return (
             <ul>
                 {this.props.data}
             </ul>
         );
     }
-});
+};
 
 ready(function() {
     fetch(GITHUB_API_URL)

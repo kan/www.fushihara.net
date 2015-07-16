@@ -51,7 +51,7 @@ gulp.task('minify-css', ['sass'], function() {
 gulp.task('script', function() {
     browserify({
         entries: ['src/js/main.jsx'],
-        transform: [reactify, debowerify],
+        transform: [[reactify, {es6: true}], debowerify],
         debug: true
     }).bundle()
         .pipe($.plumber())
